@@ -39,6 +39,7 @@
             btnRemoveTask = new Button();
             lblTaskLists = new Label();
             lblTasks = new Label();
+            btnEditTask = new Button();
             menuStripMain.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,6 +74,8 @@
             lstBoxTaskLists.Name = "lstBoxTaskLists";
             lstBoxTaskLists.Size = new Size(390, 479);
             lstBoxTaskLists.TabIndex = 1;
+            lstBoxTaskLists.SelectedIndexChanged += lstBoxTaskLists_SelectedIndexChanged;
+            lstBoxTaskLists.DoubleClick += lstBoxTaskLists_DoubleClick;
             // 
             // chkLstBoxTasks
             // 
@@ -90,6 +93,7 @@
             btnAddTaskList.TabIndex = 3;
             btnAddTaskList.Text = "Hinzufügen";
             btnAddTaskList.UseVisualStyleBackColor = true;
+            btnAddTaskList.Click += btnAddTaskList_Click;
             // 
             // btnRemoveTaskList
             // 
@@ -99,6 +103,7 @@
             btnRemoveTaskList.TabIndex = 4;
             btnRemoveTaskList.Text = "Löschen";
             btnRemoveTaskList.UseVisualStyleBackColor = true;
+            btnRemoveTaskList.Click += btnRemoveTaskList_Click;
             // 
             // btnAddTask
             // 
@@ -118,6 +123,7 @@
             btnRemoveTask.TabIndex = 6;
             btnRemoveTask.Text = "Löschen";
             btnRemoveTask.UseVisualStyleBackColor = true;
+            btnRemoveTask.Click += btnRemoveTask_Click;
             // 
             // lblTaskLists
             // 
@@ -137,11 +143,22 @@
             lblTasks.TabIndex = 8;
             lblTasks.Text = "Aufgaben";
             // 
+            // btnEditTask
+            // 
+            btnEditTask.Location = new Point(594, 601);
+            btnEditTask.Name = "btnEditTask";
+            btnEditTask.Size = new Size(112, 34);
+            btnEditTask.TabIndex = 9;
+            btnEditTask.Text = "Bearbeiten";
+            btnEditTask.UseVisualStyleBackColor = true;
+            btnEditTask.Click += btnEditTask_Click;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(989, 668);
+            Controls.Add(btnEditTask);
             Controls.Add(lblTasks);
             Controls.Add(lblTaskLists);
             Controls.Add(btnRemoveTask);
@@ -177,5 +194,6 @@
         private Label lblTasks;
         private ToolStripMenuItem programmToolStripMenuItem;
         private ToolStripMenuItem beendenToolStripMenuItem;
+        private Button btnEditTask;
     }
 }
